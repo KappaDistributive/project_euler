@@ -28,5 +28,22 @@ std::vector<size_t> primes_below(size_t strict_upper_bound) {
   return primes;
 }
 
+std::vector<std::pair<size_t, size_t>> prime_factorization(size_t number) {
+  auto primes = primes_below(static_cast<size_t>(std::sqrt(number)) + 1);
+  std::vector<std::pair<size_t, size_t>> factorization;
+
+  for (auto prime : primes) {
+    std::pair<size_t, size_t> factor{prime, 0};
+    while (number % static_cast<size_t>(std::pow(factor.first, factor.second + 1)) == 0) {
+      factor.second++;
+    }
+    if (factor.second > 0) {
+      factorization.push_back(factor);
+    }
+  }
+
+  return factorization;
+}
+
 }  // namespace numbers
 }  // namespace utils

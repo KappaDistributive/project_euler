@@ -30,4 +30,11 @@ TEST(PrimesBelow, Medium) {
   EXPECT_EQ(want, got);
 }
 
+TEST(PrimeFactorization, Small) {
+  std::vector<std::pair<size_t, size_t>> want{{{2, 1}, {3, 2}, {5, 3}}};
+  auto got = utils::numbers::prime_factorization(2250);
+
+  EXPECT_EQ(want, got);
+}
+
 }  // namespace
