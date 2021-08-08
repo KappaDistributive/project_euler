@@ -8,6 +8,18 @@ set(CMAKE_CXX_FLAGS "-Wall -Wextra")
 set(CMAKE_CXX_FLAGS_DEBUG "-g -O0 -DDEBUG")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
+add_library(primes utils/numbers/primes.cpp)
+
+find_package(GTest)
+if (GTEST_FOUND)
+  enable_testing()
+  include_directories(${GTEST_INCLUDE_DIRS})
+
+  add_executable(PrimesUnitTests tests/PrimesUnitTests.cpp)
+  target_link_libraries(PrimesUnitTests ${GTEST_BOTH_LIBRARIES} pthread primes)
+  GTEST_DISCOVER_TESTS(PrimesUnitTests)
+endif()
+
 add_executable(problem_1 problems/1/main.cpp)
 add_executable(problem_2 problems/2/main.cpp)
 add_executable(problem_5 problems/5/main.cpp)
