@@ -22,5 +22,8 @@ endif()
 
 add_executable(problem_1 problems/1/main.cpp)
 add_executable(problem_2 problems/2/main.cpp)
+add_executable(problem_3 problems/3/main.cpp)
+target_link_libraries(problem_3 primes)
+add_executable(problem_4 problems/4/main.cpp)
 add_executable(problem_5 problems/5/main.cpp)
 add_executable(problem_24 problems/24/main.cpp)
