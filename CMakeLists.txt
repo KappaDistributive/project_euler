@@ -8,6 +8,7 @@ set(CMAKE_CXX_FLAGS "-Wall -Wextra")
 set(CMAKE_CXX_FLAGS_DEBUG "-g -O0 -DDEBUG")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
+add_executable(problem_1 problems/1/main.cpp)
 add_executable(problem_2 problems/2/main.cpp)
 add_executable(problem_5 problems/5/main.cpp)
 add_executable(problem_24 problems/24/main.cpp)
