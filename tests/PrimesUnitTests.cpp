@@ -26,6 +26,23 @@ TEST(PrimesBelow, Medium) {
        811, 821, 823, 827, 829, 839, 853, 857, 859, 863, 877, 881, 883, 887,
        907, 911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983, 991, 997}};
   auto got = utils::numbers::primes_below(1000);
+  std::cout << "want:" << std::endl;
+  for (auto it = want.begin(); it != want.end(); ++it) {
+    std::cout << *it;
+    if (std::next(it) != want.end()) {
+      std::cout << ", ";
+    }
+  }
+  std::cout << std::endl;
+  
+  std::cout << "got:" << std::endl;
+  for (auto it = got.begin(); it != got.end(); ++it) {
+    std::cout << *it;
+    if (std::next(it) != got.end()) {
+      std::cout << ", ";
+    }
+  }
+  std::cout << std::endl;
 
   EXPECT_EQ(want, got);
 }
