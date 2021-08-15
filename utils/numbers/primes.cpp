@@ -50,5 +50,21 @@ std::vector<std::pair<size_t, size_t>> prime_factorization(size_t number) {
   return factorization;
 }
 
+std::vector<size_t> divisors(size_t number, bool is_proper) {
+  std::vector<size_t> result;
+  if (number == 0) {
+    return result;
+  }
+  for (size_t factor{1}; factor < number; ++factor) {
+    if (number % factor == 0) {
+      result.push_back(factor);
+    }
+  }
+  if (!is_proper) {
+    result.push_back(number);
+  }
+  return result;
+}
+
 }  // namespace numbers
 }  // namespace utils

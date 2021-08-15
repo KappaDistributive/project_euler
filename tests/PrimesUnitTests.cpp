@@ -34,7 +34,7 @@ TEST(PrimesBelow, Medium) {
     }
   }
   std::cout << std::endl;
-  
+
   std::cout << "got:" << std::endl;
   for (auto it = got.begin(); it != got.end(); ++it) {
     std::cout << *it;
@@ -50,6 +50,27 @@ TEST(PrimesBelow, Medium) {
 TEST(PrimeFactorization, Small) {
   std::vector<std::pair<size_t, size_t>> want{{{2, 1}, {3, 2}, {5, 3}}};
   auto got = utils::numbers::prime_factorization(2250);
+
+  EXPECT_EQ(want, got);
+}
+
+TEST(Divisors, Trivial) {
+  std::vector<size_t> want;
+  auto got = utils::numbers::divisors(0);
+
+  EXPECT_EQ(want, got);
+}
+
+TEST(Divisors, Proper) {
+  std::vector<size_t> want{{1, 2, 3}};
+  auto got = utils::numbers::divisors(6, true);
+
+  EXPECT_EQ(want, got);
+}
+
+TEST(Divisors, Imroper) {
+  std::vector<size_t> want{{1, 2, 3, 6}};
+  auto got = utils::numbers::divisors(6);
 
   EXPECT_EQ(want, got);
 }

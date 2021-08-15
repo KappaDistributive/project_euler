@@ -15,5 +15,7 @@ std::vector<size_t> primes_below(size_t strict_upper_bound);
 // E.g. 360 = 2*3 * 3**2 * 5**1 -> {(2, 3), (3, 2), (5, 1)}
 std::vector<std::pair<size_t, size_t>> prime_factorization(size_t number);
 
+std::vector<size_t> divisors(size_t number, bool is_proper = false);
+
 }  // namespace numbers
 }  // namespace utils
