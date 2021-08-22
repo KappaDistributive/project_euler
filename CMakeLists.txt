@@ -43,6 +43,7 @@ add_executable(problem_36 problems/36/main.cpp)
 add_executable(problem_45 problems/45/main.cpp)
 add_executable(problem_52 problems/52/main.cpp)
 add_executable(problem_63 problems/63/main.cpp)
+add_executable(problem_67 problems/67/main.cpp)
 add_executable(problem_87 problems/87/main.cpp)
 target_link_libraries(problem_87 primes)
 
